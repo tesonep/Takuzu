@@ -1,30 +1,32 @@
 Class {
-	#name : #TLine,
-	#superclass : #Object,
-	#type : #variable,
+	#name : 'TLine',
+	#superclass : 'Object',
+	#type : 'variable',
 	#instVars : [
 		'contents'
 	],
-	#category : 'Takuzu-Core'
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'filter streaming' }
+{ #category : 'filter streaming' }
 TLine >> contents [ 
 	^ contents
 ]
 
-{ #category : #'filter streaming' }
+{ #category : 'filter streaming' }
 TLine >> contents: anArray [
 
 	contents := anArray
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TLine >> count: aFullBlockClosure [ 
 	^contents count: aFullBlockClosure
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TLine >> isSimilarTo: aTLine [
 
 	| halfSize selfNbOf0 selfNbOf1 lineNbOf0 lineNbOf1 |
@@ -54,7 +56,7 @@ TLine >> isSimilarTo: aTLine [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TLine >> isValid [
 
 	| nbOf0 nbOf1 length |
@@ -72,18 +74,18 @@ TLine >> isValid [
 		  nbOf0 <= (length // 2) and: [ nbOf1 <= (length // 2) ] ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TLine >> nbOf0 [ 
 	^ self contents count: [ :box | box value = 0] 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TLine >> nbOf1 [
 
 	^ self contents count: [ :box | box value = 1 ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 TLine >> printOn: aStream [
 
 	super printOn: aStream.

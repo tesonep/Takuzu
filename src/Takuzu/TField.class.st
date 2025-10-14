@@ -1,13 +1,15 @@
 Class {
-	#name : #TField,
-	#superclass : #Object,
+	#name : 'TField',
+	#superclass : 'Object',
 	#instVars : [
 		'grid'
 	],
-	#category : 'Takuzu-Core'
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'point functions' }
+{ #category : 'point functions' }
 TField class >> emptyGridWithSize: aNumber [
 
 	^ self new
@@ -15,13 +17,13 @@ TField class >> emptyGridWithSize: aNumber [
 		  yourself
 ]
 
-{ #category : #translating }
+{ #category : 'translating' }
 TField class >> generate [
 
 	^ self generateWithSize: 4
 ]
 
-{ #category : #translating }
+{ #category : 'translating' }
 TField class >> generateWithSize: aNumber [
 
 	^ (self
@@ -32,7 +34,7 @@ TField class >> generateWithSize: aNumber [
 		  yourself
 ]
 
-{ #category : #'point functions' }
+{ #category : 'point functions' }
 TField class >> grid: aCTNewArray2D [
 
 	^ self new
@@ -40,7 +42,7 @@ TField class >> grid: aCTNewArray2D [
 		  yourself
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField class >> gridForTest [
 	"represents this grid: 
 	
@@ -69,7 +71,7 @@ TField class >> gridForTest [
 			   yourself)
 ]
 
-{ #category : #level10 }
+{ #category : 'level10' }
 TField class >> level10Grid1 [
 
 	| level |
@@ -89,7 +91,7 @@ _0____1_1_
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level10 }
+{ #category : 'level10' }
 TField class >> level10Grid2 [
 
 	| level |
@@ -109,7 +111,7 @@ _0__0_0___'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level10 }
+{ #category : 'level10' }
 TField class >> level10Grid3 [
 
 	| level |
@@ -129,7 +131,7 @@ ___0____1_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level10 }
+{ #category : 'level10' }
 TField class >> level10Grid4 [
 
 	| level |
@@ -149,7 +151,7 @@ _____1__1_
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level10 }
+{ #category : 'level10' }
 TField class >> level10Grid5 [
 
 	| level |
@@ -169,7 +171,7 @@ ___0__1_1_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level12 }
+{ #category : 'level12' }
 TField class >> level12Grid1 [
 
 	| level |
@@ -191,7 +193,7 @@ ____1__11___'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level12 }
+{ #category : 'level12' }
 TField class >> level12Grid2 [
 
 	| level |
@@ -213,7 +215,7 @@ ______11_1__
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level12 }
+{ #category : 'level12' }
 TField class >> level12Grid3 [
 
 	| level |
@@ -235,7 +237,7 @@ __0___1_____'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level12 }
+{ #category : 'level12' }
 TField class >> level12Grid4 [
 
 	| level |
@@ -257,7 +259,7 @@ ___1_1__00__
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level12 }
+{ #category : 'level12' }
 TField class >> level12Grid5 [
 
 	| level |
@@ -279,7 +281,7 @@ _____1____0_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level4 }
+{ #category : 'level4' }
 TField class >> level4Grid1 [
 
 	| level |
@@ -293,7 +295,7 @@ ____'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level4 }
+{ #category : 'level4' }
 TField class >> level4Grid2 [
 
 	| level |
@@ -307,7 +309,7 @@ _00_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level4 }
+{ #category : 'level4' }
 TField class >> level4Grid3 [
 
 	| level |
@@ -321,7 +323,7 @@ ___0'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level4 }
+{ #category : 'level4' }
 TField class >> level4Grid4 [
 
 	| level |
@@ -335,7 +337,7 @@ ____'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level4 }
+{ #category : 'level4' }
 TField class >> level4Grid5 [
 
 	| level |
@@ -349,7 +351,7 @@ ___0'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level6 }
+{ #category : 'level6' }
 TField class >> level6Grid1 [
 
 	| level |
@@ -365,7 +367,7 @@ ____1_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level6 }
+{ #category : 'level6' }
 TField class >> level6Grid2 [
 
 	| level |
@@ -381,7 +383,7 @@ _0____'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level6 }
+{ #category : 'level6' }
 TField class >> level6Grid3 [
 
 	| level |
@@ -397,7 +399,7 @@ _11___'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level6 }
+{ #category : 'level6' }
 TField class >> level6Grid4 [
 
 	| level |
@@ -413,7 +415,7 @@ ______'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level6 }
+{ #category : 'level6' }
 TField class >> level6Grid5 [
 
 	| level |
@@ -429,7 +431,7 @@ ___1__'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level8 }
+{ #category : 'level8' }
 TField class >> level8Grid1 [
 
 	| level |
@@ -447,7 +449,7 @@ _0______
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level8 }
+{ #category : 'level8' }
 TField class >> level8Grid2 [
 
 	| level |
@@ -465,7 +467,7 @@ _1______'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level8 }
+{ #category : 'level8' }
 TField class >> level8Grid3 [
 
 	| level |
@@ -483,7 +485,7 @@ ______0_'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level8 }
+{ #category : 'level8' }
 TField class >> level8Grid4 [
 
 	| level |
@@ -501,7 +503,7 @@ ___1____'.
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #level8 }
+{ #category : 'level8' }
 TField class >> level8Grid5 [
 
 	| level |
@@ -519,7 +521,7 @@ ________
 		  (LevelImporter fromString: level fromPackage: self package)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TField class >> size: aNumber [
 
 	^ self new
@@ -529,14 +531,14 @@ TField class >> size: aNumber [
 				   tabulate: [ :x :y | TSetBox value: nil ])
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> checkIfFinished [
 
 	(self isFull and: [ self isValid ]) 
 		ifTrue: [ self endGame ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> clickOnBox: aTBox [
 
 	| box |
@@ -545,7 +547,7 @@ TField >> clickOnBox: aTBox [
 	self checkIfFinished
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> endGame [
 
 	(OSPlatform current isMacOSX and: [UNNotificationCenter isAvailable])
@@ -553,12 +555,12 @@ TField >> endGame [
 		ifFalse: [ self openEndGameWindowInBloc ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TField >> grid [ 
 	^ grid 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TField >> grid: aCTNewArray2D [
 
 	grid := aCTNewArray2D.
@@ -567,13 +569,13 @@ TField >> grid: aCTNewArray2D [
 		field: self   ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TField >> initialize [
 
 	super initialize.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isColumnUniqueAtIndex: aNumber [
 
 	| testedColumn columns |
@@ -585,7 +587,7 @@ TField >> isColumnUniqueAtIndex: aNumber [
 	^ self isThisLineUnique: testedColumn amongArray: columns
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isColumnValidAtIndex: aNumber [
 
 	| testedColumn |
@@ -593,13 +595,13 @@ TField >> isColumnValidAtIndex: aNumber [
 	^ testedColumn isValid
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isFull [ 
 	
 	^ (self grid contents anySatisfy: [ :each | each value isNil ]) not
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isRowUniqueAtIndex: aNumber [
 
 	| testedRow rows |
@@ -610,7 +612,7 @@ TField >> isRowUniqueAtIndex: aNumber [
 	^ self isThisLineUnique: testedRow amongArray: rows 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isRowValidAtIndex: aNumber [
 
 	| testedRow |
@@ -618,7 +620,7 @@ TField >> isRowValidAtIndex: aNumber [
 	^ testedRow isValid
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isThisLineUnique: aTLine amongArray: anArray [
 		
 
@@ -626,7 +628,7 @@ TField >> isThisLineUnique: aTLine amongArray: anArray [
 		   aTLine isSimilarTo: line ]) not
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TField >> isValid [
 
 	| columnIndex rowIndex |
@@ -648,7 +650,7 @@ TField >> isValid [
 	^ true
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> openEndGameWindowInBloc [
   
 	| space container |
@@ -679,7 +681,7 @@ TField >> openEndGameWindowInBloc [
 	^ space
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> permutateLine: aFirstNumber with: aSecondNumber [
 
 	| tmp |
@@ -689,7 +691,7 @@ TField >> permutateLine: aFirstNumber with: aSecondNumber [
 		self grid atRow: aSecondNumber put: tmp
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> permutateLines [
 
 	| array |
@@ -701,13 +703,13 @@ TField >> permutateLines [
 		self permutateLine: line1 with: line2 ]
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 TField >> removeRandomBoxes [
 
 	self removeRandomBoxesWithRatio: 65
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 TField >> removeRandomBoxesWithRatio: aNumber [
 
 	(aNumber > 0 and: [ aNumber < 100 ]) ifFalse: [ ^ self ].
@@ -716,7 +718,7 @@ TField >> removeRandomBoxesWithRatio: aNumber [
 			self grid at: column @ row put: (TUnknownBox new position: column @ row) ] ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> solve [
 
 	^ (self solveTheField: self atColumn: 1 atRow: 1) ifTrue: [ 
@@ -724,7 +726,7 @@ TField >> solve [
 	ifFalse: [ Error signal: 'Field not solvable' ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TField >> solveTheField: aTField atColumn: columnIndex atRow: rowIndex [
 
 	| box currentColumn currentRow |

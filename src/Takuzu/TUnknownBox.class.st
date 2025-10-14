@@ -1,15 +1,17 @@
 Class {
-	#name : #TUnknownBox,
-	#superclass : #TBox,
-	#category : 'Takuzu-Core'
+	#name : 'TUnknownBox',
+	#superclass : 'TBox',
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TUnknownBox class >> textualMapCharacter [
 	^ $_
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TUnknownBox >> click [
 	"change the box value to its next state (nil -> 0 -> 1 -> nil)"
 
@@ -19,7 +21,7 @@ TUnknownBox >> click [
 				 ifFalse: [ nil ] ])
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TUnknownBox >> isTUnknownBox [ 
 	
 	^ true

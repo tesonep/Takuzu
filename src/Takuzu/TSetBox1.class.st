@@ -1,15 +1,17 @@
 Class {
-	#name : #TSetBox1,
-	#superclass : #TSetBox,
-	#category : 'Takuzu-Core'
+	#name : 'TSetBox1',
+	#superclass : 'TSetBox',
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TSetBox1 class >> textualMapCharacter [ 
 	^ $1
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TSetBox1 >> initialize [
 
 	super initialize.

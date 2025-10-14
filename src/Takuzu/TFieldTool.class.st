@@ -1,15 +1,17 @@
 Class {
-	#name : #TFieldTool,
-	#superclass : #Object,
+	#name : 'TFieldTool',
+	#superclass : 'Object',
 	#instVars : [
 		'lines',
 		'field',
 		'characterClassBinding'
 	],
-	#category : 'Takuzu-Core'
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool class >> grid_1 [
 
 	| grid |
@@ -23,7 +25,7 @@ TFieldTool class >> grid_1 [
 	^ self new buildMapFor: grid
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool class >> grid_2 [
 
 	| grid |
@@ -36,7 +38,7 @@ TFieldTool class >> grid_2 [
 	^ self new buildMapFor: grid
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool class >> grid_3 [
 
 	| grid |
@@ -49,7 +51,7 @@ TFieldTool class >> grid_3 [
 	^ self new buildMapFor: grid
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool class >> grid_4 [
 
 	| grid |
@@ -62,7 +64,7 @@ TFieldTool class >> grid_4 [
 	^ self new buildMapFor: grid
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool class >> grid_5 [
 
 	| grid |
@@ -76,7 +78,7 @@ TFieldTool class >> grid_5 [
 	^ self new buildMapFor: grid
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool >> buildArrayFor: aString [
 
 	| array index |
@@ -92,7 +94,7 @@ TFieldTool >> buildArrayFor: aString [
 	^ array
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool >> buildMapFor: aString [
 
 	| array2D |
@@ -101,12 +103,12 @@ TFieldTool >> buildMapFor: aString [
 	^ field
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 TFieldTool >> classFor: aCharacter [ 
 	^ characterClassBinding at: aCharacter ifAbsent: [ TBox unknown ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool >> fillBindingDictionary [
 
 	characterClassBinding := Dictionary new.
@@ -115,20 +117,20 @@ TFieldTool >> fillBindingDictionary [
 	characterClassBinding at: '0' put: (TBox set: 0)
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TFieldTool >> initialize [
 
 	super initialize.
 	self fillBindingDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TFieldTool >> maxLineLength [
 
 	^ (lines max: [ :each | each size ]) // 2
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldTool >> splitLines: aString [
 
 	^ aString splitOn: Character cr

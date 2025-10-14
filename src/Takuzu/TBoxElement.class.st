@@ -1,40 +1,42 @@
 Class {
-	#name : #TBoxElement,
-	#superclass : #BlElement,
+	#name : 'TBoxElement',
+	#superclass : 'BlElement',
 	#instVars : [
 		'box',
 		'field',
 		'colorDictionary'
 	],
-	#category : 'Takuzu-UI'
+	#category : 'Takuzu-UI',
+	#package : 'Takuzu',
+	#tag : 'UI'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBoxElement class >> box: aMBox [
 
 	^ self new box: aMBox
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> backgroundPaint [
 
 	^ Color veryDarkGray 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> box [
 
 	^ box
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBoxElement >> box: aMBox [
 
 	box := aMBox.
 	self updateBackgroundColor
 ]
 
-{ #category : #public }
+{ #category : 'public' }
 TBoxElement >> click [
 
 	self box isTSetBox
@@ -43,25 +45,25 @@ TBoxElement >> click [
 			self updateBackgroundColor ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> colorDictionary [
 
 	^ colorDictionary 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> field [
 
 	^ field
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> field: aMField [
 
 	field := aMField.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> initialize [
 
 	super initialize.
@@ -80,12 +82,12 @@ TBoxElement >> initialize [
 	self addEventHandlerOn: BlMouseUpEvent do: [ :anEvent | self click ]
 ]
 
-{ #category : #'actions api' }
+{ #category : 'actions api' }
 TBoxElement >> lock [
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBoxElement >> updateBackgroundColor [
 	self background: (self colorDictionary at: self box value)
 ]

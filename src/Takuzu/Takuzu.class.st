@@ -1,10 +1,12 @@
 Class {
-	#name : #Takuzu,
-	#superclass : #Object,
-	#category : 'Takuzu-Core'
+	#name : 'Takuzu',
+	#superclass : 'Object',
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> generateOSXPackage [
 
 	AppGeneratorOSXGenerator new
@@ -21,7 +23,7 @@ Takuzu class >> generateOSXPackage [
 		generate
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> generateWindowsPackage [
 
 	AppGeneratorWindowsGenerator new
@@ -40,19 +42,19 @@ Takuzu class >> generateWindowsPackage [
 		generate
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> iconFile [
 
 	^ (IceRepository repositoryNamed: 'Takuzu') location / 'resources' / 'Takuzu.ico'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> iconSetFile [
 
 	^ (IceRepository repositoryNamed: 'Takuzu') location / 'resources' / 'Takuzu.icns'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> menuBar [
 
 	| bar |
@@ -65,7 +67,7 @@ Takuzu class >> menuBar [
 	^ bar
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> menuHelp [
 
 	| menu |
@@ -73,11 +75,11 @@ Takuzu class >> menuHelp [
 	menu label: (ToLabel text: 'Help').
 	menu icon:
 		(ToImage inner: (Smalltalk ui icons iconNamed: #glamorousHelp)).
-	menu whenClickedDo: [ self showHelp ].
+	menu addEventHandlerOn: BlClickEvent do: [ self showHelp ].
 	^ menu
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> menuLevel [
 
 	| menu |
@@ -110,14 +112,15 @@ Takuzu class >> menuLevel [
 			tmp := TFieldElement class selectors select: [ :each |
 				       each = selector ].
 			subMenu addItem:
-				((ToButtonMenuItem new labelText: stream) whenClickedDo: [
-					 TFieldElement openWithModel: (TField perform: selector asSymbol) ]) ].
+				((ToMenuItem new labelText: stream) addEventHandlerOn: BlClickEvent do: [
+					 TFieldElement openWithModel: (TField perform: selector asSymbol) ];
+					yourself) ].
 		menu addItem: subMenu ].
 
 	^ menu
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> menuRandom [
 
 	| menu |
@@ -126,11 +129,12 @@ Takuzu class >> menuRandom [
 	menu icon:
 		(ToImage inner: (Smalltalk ui icons iconNamed: #solidMenu)).
 	menu addItem:
-		((ToButtonMenuItem new labelText: '4x4') whenClickedDo: [
-			 TFieldElement launch4 ]).
+		((ToMenuItem new labelText: '4x4') addEventHandlerOn: BlClickEvent do: [TFieldElement launch4 ];
+		yourself).
 	menu addItem:
-		((ToButtonMenuItem new labelText: '6x6') whenClickedDo: [
-			 TFieldElement launch6 ]).
+		((ToMenuItem new labelText: '6x6') 
+			addEventHandlerOn: BlClickEvent do: [ TFieldElement launch6 ];
+			yourself).
 	"menu addItem:
 		((ToButtonMenuItem new labelText: '8x8') whenClickedDo: [
 			 TFieldElement launch8 ]).
@@ -144,7 +148,7 @@ Takuzu class >> menuRandom [
 	^ menu
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> openWithMenuBar [
 
 	| space randomMenu levelMenu helpMenu bar title |
@@ -154,7 +158,7 @@ Takuzu class >> openWithMenuBar [
 	bar := self menuBar.
 	title := self title.
 
-	bar addMenu: levelMenu.
+	bar addItem: levelMenu.
 	bar addMenu: randomMenu.
 	bar addMenu: helpMenu.
 	space := BlSpace new.
@@ -163,15 +167,16 @@ Takuzu class >> openWithMenuBar [
 	space root addChild: bar.
 	space extent: 300 @ 300.
 
-	"Hack to fix windows position to show title bar"		
-	(OSPlatform current isWindows) ifTrue: [ space position: space position + 100@100 ].
+	"Hack to fix windows position to show title bar"
+	OSPlatform current isWindows ifTrue: [
+		space position: space position + 100 @ 100 ].
 
 	space show.
-	
+
 	^ space
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 Takuzu class >> showHelp [
 
 	| space container lab |
@@ -215,7 +220,7 @@ Have fun !' asRopedText foreground: Color white).
 	^ space show
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 Takuzu class >> title [
 
 	| title |

@@ -1,6 +1,6 @@
-Extension { #name : #BlHandlerAnnouncementSubscription }
+Extension { #name : 'BlHandlerAnnouncementSubscription' }
 
-{ #category : #'*Takuzu' }
+{ #category : '*Takuzu' }
 BlHandlerAnnouncementSubscription >> unregister [
 	
 	"Just compatibility"

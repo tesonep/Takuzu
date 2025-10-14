@@ -1,6 +1,6 @@
-Extension { #name : #Array }
+Extension { #name : 'Array' }
 
-{ #category : #'*Takuzu' }
+{ #category : '*Takuzu' }
 Array >> asTLine [
 
 	^ TLine new contents: self; yourself

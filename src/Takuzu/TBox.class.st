@@ -1,41 +1,43 @@
 Class {
-	#name : #TBox,
-	#superclass : #Object,
+	#name : 'TBox',
+	#superclass : 'Object',
 	#instVars : [
 		'value',
 		'field',
 		'position',
 		'valueDictionary'
 	],
-	#category : 'Takuzu-Core'
+	#category : 'Takuzu-Core',
+	#package : 'Takuzu',
+	#tag : 'Core'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TBox class >> set: aNumber [
 	^ TSetBox value: aNumber
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBox class >> unknown [
 	^ TUnknownBox new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TBox >> click [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBox >> field [ 
 	^ field 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBox >> field: aTField [ 
 	field := aTField 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TBox >> initialize [ 
 	super initialize.
 	valueDictionary := Dictionary new.
@@ -45,28 +47,28 @@ TBox >> initialize [
 			  at: nil put: 0
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TBox >> isTSetBox [ 
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 TBox >> isTUnknownBox [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBox >> position [ 
 	^ position
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBox >> position: aPoint [ 
 	position := aPoint 
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 TBox >> printOn: aStream [
 
 	super printOn: aStream.
@@ -74,17 +76,17 @@ TBox >> printOn: aStream [
 	aStream print: self value
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 TBox >> value [ 
 	^ value 
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 TBox >> value: aNumber [
 	value := aNumber 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TBox >> valueDictionary [ 
 	^ valueDictionary 
 ]

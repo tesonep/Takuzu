@@ -1,55 +1,57 @@
 Class {
-	#name : #TFieldElement,
-	#superclass : #BlElement,
+	#name : 'TFieldElement',
+	#superclass : 'BlElement',
 	#instVars : [
 		'field'
 	],
-	#category : 'Takuzu-UI'
+	#category : 'Takuzu-UI',
+	#package : 'Takuzu',
+	#tag : 'UI'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> launch10 [
 
 	^ self openWithModel: (TField generateWithSize: 10)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> launch12 [
 
 	^ self openWithModel: (TField generateWithSize: 12)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> launch4 [
 
 	^ self openWithModel: (TField generateWithSize: 4)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> launch6 [
 
 	^ self openWithModel: (TField generateWithSize: 6)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> launch8 [
 
 	^ self openWithModel: (TField generateWithSize: 8)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> openGridForTest [
 
 	^ self openWithModel: TField gridForTest 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> openRandom [
 
 	^ self openWithModel: TField generate
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> openRandomFromTestGrids [ 
 	| sel res |
 	sel := (TFieldTool class selectors select: [ :each | each  beginsWith: 'grid_' ]) atRandom.
@@ -57,7 +59,7 @@ TFieldElement class >> openRandomFromTestGrids [
 	^ self openWithModel: res
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 TFieldElement class >> openWithModel: aTField [
 
 	| aFieldElement space |
@@ -76,12 +78,12 @@ TFieldElement class >> openWithModel: aTField [
 	space show
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TFieldElement >> field [ 
 	^field
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 TFieldElement >> field: aTField [
 
 	field := aTField.
@@ -97,7 +99,7 @@ TFieldElement >> field: aTField [
 		self addChild: boxElement ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 TFieldElement >> initialize [
 
 	super initialize.
