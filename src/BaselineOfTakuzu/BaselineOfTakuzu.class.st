@@ -20,11 +20,11 @@ BaselineOfTakuzu >> defineDependencies: spec [
 
 	spec
 		baseline: 'Alexandrie'
-		with: [ spec repository: 'github://pharo-graphics/Alexandrie:8008a3d/src' ].
+		with: [ spec repository: 'github://pharo-graphics/Alexandrie:v2.5.0/src' ].
 
 	spec
 		baseline: 'Bloc'
-		with: [ spec repository: 'github://pharo-graphics/Bloc:2c698bc/src' ].
+		with: [ spec repository: 'github://pharo-graphics/Bloc:v2.5.0/src' ].
 
 	spec
 		baseline: 'LevelImporter'
@@ -33,11 +33,11 @@ BaselineOfTakuzu >> defineDependencies: spec [
 
 	spec
 		baseline: 'Album'
-		with: [ spec repository: 'github://pharo-graphics/Album:3634b88/src' ].
+		with: [ spec repository: 'github://pharo-graphics/Album:v0.6.0/src' ].
 
 	spec
 		baseline: 'Toplo'
-		with: [ spec repository: 'github://pharo-graphics/Toplo:672c93b/src' ].
+		with: [ spec repository: 'github://pharo-graphics/Toplo:v0.6.0/src' ].
 
 	spec baseline: 'ContainersArray2D' with: [
 		spec repository:
