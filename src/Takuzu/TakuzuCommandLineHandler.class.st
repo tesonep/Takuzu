@@ -1,18 +1,24 @@
 Class {
 	#name : 'TakuzuCommandLineHandler',
-	#superclass : 'CommandLineHandler',
+	#superclass : 'ClapApplication',
 	#category : 'Takuzu',
 	#package : 'Takuzu'
 }
 
 { #category : 'accessing' }
-TakuzuCommandLineHandler class >> commandName [
+TakuzuCommandLineHandler class >> commandSpecification [ 
 
-	^ 'takuzu'
+	<commandline>
+
+	^ (ClapCommandSpec id: #takuzu)
+		description: 'Launch Takuzu';
+		commandClass: self;
+		addFlag: #embedded description: 'If we are running embedded';
+		yourself
 ]
 
 { #category : 'activation' }
-TakuzuCommandLineHandler >> activate [
+TakuzuCommandLineHandler >> execute [
 
 	OSWindowDriver current startUp: true.
 	AppGeneratorSupport errorHandler: AppGeneratorSDLMessageErrorHandler new.
@@ -55,5 +61,8 @@ TakuzuCommandLineHandler >> activate [
 			space := Takuzu openWithMenuBar.
 			space
 				when: BlSpaceClosedEvent
-				do: [ :e | Smalltalk snapshot: false andQuit: true ] ]
+				do: [ :e | Smalltalk snapshot: false andQuit: true ] ].
+			
+		"Prevent the command line handler to exit"
+		self context doNotObeyExits
 ]
