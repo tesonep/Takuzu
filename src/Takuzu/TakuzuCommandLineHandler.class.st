@@ -53,7 +53,7 @@ TakuzuCommandLineHandler >> execute [
 						addItemWithTitle: 'Show Help'
 						action: [ Takuzu showHelp ]
 						shortcut: '' ].
-			main setAsMainMenu.
+			main beMainMenu.
 			
 			TFieldElement launch4 ]
 		ifFalse: [
