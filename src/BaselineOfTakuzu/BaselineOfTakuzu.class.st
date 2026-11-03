@@ -45,7 +45,7 @@ BaselineOfTakuzu >> defineDependencies: spec [
 		
 	spec baseline: 'ApplicationGenerator' with: [
 		spec repository:
-			'github://tesonep/PharoApplicationGenerator:master/src' ].	
+			'github://tesonep/PharoApplicationGenerator:v2.0.0/src' ].	
 		
 	spec baseline: 'ObjCBridge' with: [
 		spec repository:
