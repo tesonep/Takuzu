@@ -21,6 +21,9 @@ jobs:
         run: |
           brew update
           brew install create-dmg
+      - name: Install SDL2
+        run: |
+          brew install sdl2
 
       - name: Create Package
         run: |

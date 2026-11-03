@@ -27,7 +27,7 @@ jobs:
       - name: Install Cygwin
         uses: cygwin/cygwin-install-action@master
         with: 
-            packages: cmake mingw64-x86_64-clang zip unzip wget curl make git libtool
+            packages: cmake mingw64-x86_64-clang zip unzip wget curl make git libtool libSDL2-devel
 
       - name: Create Package
         run: |
